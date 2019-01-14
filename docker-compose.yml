@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  gwap-exercise:
+    container_name: gwap-exercise
+    build: .
+    expose:
+      - 8000
+    ports:
+      - 8080:8080
+    env_file:
+      - environments/hml.env

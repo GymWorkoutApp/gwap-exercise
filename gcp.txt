@@ -1,0 +1,5 @@
+docker build -t gcr.io/${PROJECT_ID}/gwa_common:v4 .
+docker push gcr.io/${PROJECT_ID}/gwa_common:v4
+kubectl set image deployment/gwa-common-web gwa-common-web=gcr.io/${PROJECT_ID}/gwa_common:v3
+kubectl run gwa-common-web --image=gcr.io/${PROJECT_ID}/gwa-common:v4 --port 8080
+kubectl expose deployment gwa-common-web --type=LoadBalancer --port 80 --target-port 8080
