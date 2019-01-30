@@ -14,4 +14,4 @@ elastic-apm==4.0.1
 pyjwt==1.7.0
 kafka-python==1.4.4
 psycopg2-binary==2.7.6.1
-git+git://github.com/GymWorkoutApp/gwa-framework.git@0.0.36
+git+https://dalmarcogd:82fxhf27@gitlab.com/gwap/gwap-framework.git@0.0.46

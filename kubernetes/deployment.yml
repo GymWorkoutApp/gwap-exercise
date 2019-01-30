@@ -1,0 +1,88 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gwap-exercise
+  labels:
+    app: gwap-exercise
+spec:
+  selector:
+    matchLabels:
+      app: gwap-exercise
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: gwap-exercise
+        tier: web
+    spec:
+      containers:
+      - name: gwap-exercise-app
+        image: gcr.io/gym-app-gd/gwap-exercise:latest
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /gwap/exercise/
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /gwap/exercise/
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        ports:
+          - containerPort: 8080
+        env:
+          - name: DB_HOST
+            value: 127.0.0.1:5432
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: cloudsql-db-credentials
+                key: username
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: cloudsql-db-credentials
+                key: password
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.11
+        command: ["/cloud_sql_proxy",
+                  "-instances=gym-app-gd:us-central1:gwa-db-hml=tcp:5432",
+                  "-credential_file=/secrets/cloudsql/credentials.json"]
+        securityContext:
+          runAsUser: 2  # non-root user
+          allowPrivilegeEscalation: false
+        volumeMounts:
+          - name: cloudsql-instance-credentials
+            mountPath: /secrets/cloudsql
+            readOnly: true
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials
+
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "gwap-exercise-load-balancer"
+  annotations:
+    cloud.google.com/load-balancer-type: "Internal"
+  namespace: "default"
+  labels:
+    app: "gwap-exercise"
+spec:
+  ports:
+  - protocol: "TCP"
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: "gwap-exercise"
+    tier: "web"
+  type: "LoadBalancer"
+  loadBalancerIP: ""
+
+

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gym-app-gd",
+  "private_key_id": "c5a09853749f49a4103fb9340f409cef036796fa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDB6Ktu78kQhr7O\naz6GBHJ9I3AKGmsQTJrIObMp8Dhnpg/IPIYeb/02lHwaqY4f0Z2kRAB7K7sQkJtL\nDk1Lb/ynEqXh94W136jDEEDdCNqqbTVYPJ5xPC8u4nNmphMDMh99WpLnJ4NuJMZB\nBxAcyGnbmV0vzRQQ4mgI6Dt2yf1JMat5MkChQlaS6hKTAsz7MH4SKF2GQmL+JjJi\nK1nMTjd6aKy77FVSKTJIgbbJBoXJndv1fPTvnPw1hiCqPYuLtUBstfKTf5R3mkWs\nQVAnYdsDqKpZgkrssEoItJnUv2ZJOa8tVZRMFCK15iGorGfOeS5TKmbbebb41Usm\nRTjZyTMjAgMBAAECggEARwAHGYEyGVuFLPbGt3KUay6ZHRHsRtUNzaeW6xG6zXTY\nDYTfxPBTgnMe9/JCiHMLqjR+CpuKDLguLG7JrYgNNi2VUKZ9roj89aOTZHuT+Vgw\ncqULjMGxMxUWlSzVBFQLhK4v4PSuYpuTfgb0ht15KT/AB7srED2eQzipYUb3d59V\nXcwEI8DB8YNzatEqmjU8T3nWXH+gH+5edZLbl7TnW7sdC3RLUd6EiIJBys7bxrNu\nrgI/Cwc7dtF1wMgddjQXQvV4WKGKexAj/QfC4NBUsbSmr9Fn2FxBF7htqKYMAXKE\njvcfNSk8f3Boe6y3fPNe9uSit+Ys/STc8ew2F9/frQKBgQDqk5oyhcUytZqyoPPW\nIy7VPOEYEmE/RiY1VEZSTs+aA+PldzNN7n5fgGop5gB/YIqGpKS7E9weP0CZgXUg\nCBhcR5PDBxNWVu/nspqOldBp+2kop0mVqxSeTW3phS0+YZARboksGrWEjUe38Bhf\nbzWmEPZgrL6hxj2W2Gdi016vBwKBgQDTnkG+mX4HX0LEBBTetVCtx+o1c7rwzdZ+\n4GFwty1+RIRao3gOdI0tayW4SNFvZVLLYbOCwbxpw1/TCjAV+RBoNjdag4K/AQL3\nVD5HIkvdAUG3UgD7F8xbEyDzf5uUYSWN4GKsIr/YppGfYvlr+Adm18lgyZIMdle8\nmH01XFf4BQKBgCHvcopGke2xGg0nfb8H3fmZUhMSbaEiu9pRM88qeZwVXf3PTcvD\naeLVCAbBsGa9B61M2kv6Joj1q5nJgbE9mpCXBkhbmK+P6isBypxADiOW7HKmKN4P\nHu970h/LVW1F3fq3m/6WapYffjWc9VmxE/jPUWVQ+E8dB8Hv0p0YaQU3AoGBAJOb\nUr5w8CCSSM7TDf+eNy1QQcSQ+fdXjGMpfa4Sh1AI2M0kMuzaTVM95qyZVkS+RzcH\n6h+tpQ+csK1S8OGSvegC0S94he1W9kuwXlRdzs7UPpNxRq/eFLP+LsDJ5Kpl7Lz+\no7Tv9CNZZD/p2JKACiGpKJUzZIT+0woAz202AUJFAoGATh33nFa6KQtGNnRwF0Cg\n7KcQDfyVDgnLu7BxVsERh9WMLt6QND+pGybbY8U/yoxmDdBG0mrmD++5saQwKsX7\nqR9F6O8pAPOSS49m9jQ5GQk3QrlvwGqhIieaHciH94qfyCA7XPp1ADrHao6lhOGT\nlUtQRQrx1QE8WqHWrvDQKtY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gitlab-ci@gym-app-gd.iam.gserviceaccount.com",
+  "client_id": "111692757046671889229",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gitlab-ci%40gym-app-gd.iam.gserviceaccount.com"
+}

@@ -10,22 +10,17 @@
 #   By default (without GWA_ENVIRONMENT set) we run as "dev"
 if [ -z "${GWA_ENVIRONMENT}" ]
 then
-	GWA_ENVIRONMENT="dev"
+	GWA_ENVIRONMENT="hml"
 fi
 
 # DOCKER ENTRYPOINT GIVE US THE EXECUTION FILE AS PARAMETER
-APP="gunicorn -c ${1} ${2}:app "
+APP="gunicorn -c ${1} ${2}:app"
 
 
 #
 # PRODUCTION ENVIRONMENT RULES
 #
 f_run_prd() {
-    # AWS Parameter Store
-    #echo -ne "\n#\n# DOCKER INIT SCRIPT: RUNNING aws cli to get parameter values for ${ECS_ENVIRONMENT}.${ECS_APPLICATION} in ${AWS_REGION} \n#\n"
-    #aws ssm get-parameters --names ${ECS_ENVIRONMENT}.${ECS_APPLICATION} --with-decryption --region ${AWS_REGION} | jq --raw-output .Parameters[0].Value > .env
-    #source prd.env
-
     for DOTENV_VAR in $(cat environments/prd.env)
     do
         export ${DOTENV_VAR}
@@ -45,11 +40,6 @@ f_run_prd() {
 # HOMOLOG ENVIRONMENT RULES
 #
 f_run_hml() {
-    # AWS Parameter Store
-    #echo -ne "\n#\n# DOCKER INIT SCRIPT: RUNNING aws cli to get parameter values for ${ECS_ENVIRONMENT}.${ECS_APPLICATION} in ${AWS_REGION} \n#\n"
-    #aws ssm get-parameters --names ${ECS_ENVIRONMENT}.${ECS_APPLICATION} --with-decryption --region ${AWS_REGION} | jq --raw-output .Parameters[0].Value > .env
-    #source prd.env
-
     for DOTENV_VAR in $(cat environments/hml.env)
     do
         export ${DOTENV_VAR}
@@ -72,7 +62,6 @@ f_run_hml() {
 f_run_local() {
     # AWS ESS Parameter Store
     echo -ne "\n#\n# DOCKER INIT SCRIPT: RUNNING ${GWA_ENVIRONMENT}.${GWA_ENVIRONMENT} \n#\n"
-    echo -ne "\n# REMEMBER TO PASS ENV VARIABLES TO DOCKER RUN WITH: -e VAR1=\"FOO\" -e VAR2=\"BAR\" \n#\n"
 
     for DOTENV_VAR in $(cat environments/hml.env)
     do

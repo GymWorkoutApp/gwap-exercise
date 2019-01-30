@@ -1,6 +1,6 @@
 from __future__ import with_statement
 from alembic import context
-from gwa_framework.models.base import BaseModel
+from gwap_framework.models.base import BaseModel
 from sqlalchemy import engine_from_config, pool
 from logging.config import fileConfig
 

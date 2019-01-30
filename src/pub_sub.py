@@ -1,6 +1,6 @@
 import pickle
 
-from gwa_framework.schemas.pub_sub import PubSubMessage
+from gwap_framework.schemas.pub_sub import PubSubMessage
 from kafka import KafkaProducer
 
 from src.settings import GWA_ENVIRONMENT
